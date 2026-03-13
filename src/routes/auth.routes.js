@@ -54,5 +54,10 @@ authRouter.post("/login",async(req,res)=>{
             {email:email}
         ]
     })
+    if(!user){
+        return res.status(409).json({
+            message:"user not found"
+        })
+    }
 })
 export default authRouter
