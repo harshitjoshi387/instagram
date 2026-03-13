@@ -67,5 +67,15 @@ authRouter.post("/login",async(req,res)=>{
                 message:"password invalid"
             })
         }
+
+        const token= jwt.sign({
+            id:user._id
+        },process.env.JWT_SECRET,{expiresIn:"7d"})
+
+        res.cookie('token',token)
+
+        res.status(200).json({
+            message:"user loggedin successfully"
+        })
 })
 export default authRouter
