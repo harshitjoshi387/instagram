@@ -59,5 +59,13 @@ authRouter.post("/login",async(req,res)=>{
             message:"user not found"
         })
     }
+        const hash= crypto.createHash('sha256').update(password).digest('hex')
+        const isPasswordValid = hash==user.password
+
+        if(!isPasswordValid){
+            return res.status(401).json({
+                message:"password invalid"
+            })
+        }
 })
 export default authRouter
