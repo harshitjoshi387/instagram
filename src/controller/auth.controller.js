@@ -47,7 +47,12 @@ import jwt from "jsonwebtoken";
 
 
 
-
+/**
+ * 
+ * @param {logincontroller} req 
+ * @param {*} res 
+ * @returns 
+ */
 
 
 
@@ -84,4 +89,9 @@ async function loginController(req,res){
         res.status(200).json({
             message:"user loggedin successfully"
         })
+}
+
+export default {
+    registerController,
+    loginController
 }
