@@ -2,6 +2,7 @@ import express from "express";
 import postModel from "../model/post.model.js";
 import ImageKit from "imagekit";
 import tofile from "imagekit"
+import jwt from "jsonwebtoken";
 
 
 async function createPostController(req,res){
