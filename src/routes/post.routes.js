@@ -6,7 +6,7 @@ const upload = multer({storage:multer.memoryStorage()})
 const postRouter= express.Router()
 
 
-postRouter.post("/",createPostController)
+postRouter.post("/",upload.single('img'),createPostController)
 
 
 export default postRouter
