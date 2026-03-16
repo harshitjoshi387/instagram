@@ -1,6 +1,7 @@
 import express from "express";
-import postModel from "../model/post.model";
-import ImageKit,{tofile} from "imagekit";
+import postModel from "../model/post.model.js";
+import ImageKit from "imagekit";
+import tofile from "imagekit"
 
 
 async function createPostController(req,res){
