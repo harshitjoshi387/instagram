@@ -75,4 +75,9 @@ export async function getPostController(req, res) {
     const posts= await postModel.find({
         user:userId
     })
+
+    res.status(200).json({
+        message:"post fetched successfully",
+        posts
+    })
 }
