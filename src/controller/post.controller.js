@@ -71,4 +71,8 @@ export async function getPostController(req, res) {
             error: err.message
         });
     }
+    const userId =decoded.id
+    const posts= await postModel.find({
+        user:userId
+    })
 }
